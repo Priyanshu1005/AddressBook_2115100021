@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ModelLayer.Model;
+using RepositoryLayer.Entity;
 
 namespace RepositoryLayer.Interface
 {
@@ -12,7 +13,7 @@ namespace RepositoryLayer.Interface
         Task<IEnumerable<ContactRequestModel>> GetContact();
 
         Task<ContactRequestModel> GetContactById(int id);
-        Task<ContactRequestModel> AddContact(ContactRequestModel contact);
+        Task<ContactEntity> AddContact(ContactRequestModel contact);
         Task<ContactRequestModel> UpdateContact(int id, ContactRequestModel contact);
         Task<ContactRequestModel> DeleteContact(int id);
     }
