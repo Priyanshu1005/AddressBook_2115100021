@@ -111,7 +111,7 @@ try
     // Swagger configuration
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
-
+    
     var app = builder.Build();
 
     // Configure Middleware
