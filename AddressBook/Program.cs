@@ -25,6 +25,7 @@ try
     // Get Redis connection string safely
     var redisConnectionString = configuration.GetConnectionString("RedisURL") ?? "127.0.0.1:6379";
 
+
     // Register Redis Connection Multiplexer with Exception Handling
     builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
     {
@@ -120,6 +121,8 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    app.UseCors(Options=> Options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
     app.UseHttpsRedirection();
     app.UseAuthentication();
