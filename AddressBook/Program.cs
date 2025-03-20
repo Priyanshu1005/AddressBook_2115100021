@@ -112,7 +112,7 @@ try
     // Swagger configuration
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
-    
+
     var app = builder.Build();
 
     // Configure Middleware
@@ -122,7 +122,7 @@ try
         app.UseSwaggerUI();
     }
 
-    app.UseCors(Options=> Options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
+    app.UseCors(Options => Options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
     app.UseHttpsRedirection();
     app.UseAuthentication();
